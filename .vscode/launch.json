@@ -5,7 +5,7 @@
             "type": "chrome",
             "request": "attach",
             "name": "Chrome Attach to running Server",
-            "url": "http://localhost:9000/#!/",
+            "url": "http://localhost:8080/login",
             "port":9222,
             "webRoot": "${workspaceRoot}",
             "sourceMaps": true,
