@@ -1,0 +1,26 @@
+CACHE MANIFEST
+# Date:version
+
+# Explicitly cached entries
+
+https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js
+https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js
+xml2json.js
+
+
+
+# If some page fails, what will be Displayed instead
+
+FALLBACK:
+
+
+# All other resources (e.g. sites) require the user to be online. 
+
+NETWORK:
+*
+
+
+# Additional resources to cache
+
+CACHE:
+

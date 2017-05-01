@@ -1,0 +1,19 @@
+{
+  "name": "2048",
+  "description": "2048 game",
+  "version": "0.0.0",
+  "homepage": "none",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "1.6.x",
+    "angular-animate": "1.6.x",
+    "angular-mocks": "1.6.x",
+    "angular-resource": "1.6.x",
+    "angular-route": "1.6.x",
+    "bootstrap": "4.0.x",
+	"jquery": "3.2.x",
+	"angular-ui-router":"1.0.0-rc.1",
+	"xml2json.min.js":"1.2.x"
+  }
+}

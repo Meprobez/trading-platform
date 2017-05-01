@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "attach",
+            "name": "Chrome Attach to running Server",
+            "url": "http://localhost:9000/#!/",
+            "port":9222,
+            "webRoot": "${workspaceRoot}",
+            "sourceMaps": true,
+            "trace": true
+        }
+    ]
+}

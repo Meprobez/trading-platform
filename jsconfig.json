@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module":"commonjs",
+        "sourceMap":true,
+        "allowSyntheticDefaultImports": true,
+        "experimentalDecorators":true
+    },  
+    "baseUrl":"./app/",
+    "allowJs":"true",
+    "include": ["app",
+        "typings/index.d.ts"],
+    "exclude": [
+        "node_modules",
+        "bower_components",
+        "static"
+    ],
+     "typeAcquisition": {
+        "include": [
+            "lodash","angular","jquery","jasmine","protractor","mocha"
+        ]
+    }
+}

@@ -1,0 +1,10 @@
+{
+  "bundle.css": "bundle.min.css",
+  "bundle.css.map": "bundle.min.css.map",
+  "bundle.js": "bundle.min.js",
+  "bundle.js.map": "bundle.min.js.map",
+  "vendor.css": "vendor.min.css",
+  "vendor.css.map": "vendor.min.css.map",
+  "vendor.js": "vendor.min.js",
+  "vendor.js.map": "vendor.min.js.map"
+}
