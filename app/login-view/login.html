@@ -1,19 +1,31 @@
+<!doctype html>
 <html>
 
 <head>
-    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
     <title></title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content=""/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="fragment" content="!"/>
+	<base href="/">
+    
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+
     <script src="login_files/jquery.min.js"></script>
-    <script src="login_files/jquery-ui.min.js"></script>
-
     <link rel="stylesheet" type="text/css" href="login_files/jquery-ui.css">
+    <script src="login_files/jquery-ui.min.js"></script>
+    
 
+    <script src="vendor.min.js"></script>
+   
+    
     <link rel="stylesheet" type="text/css" href="login.css">
     <script src="login.js"></script>
 
     
 </head>
-<body>
+<body >
     <div class="wraper">
         <div style="margin: 0px auto; position: relative; border-radius: 6px; padding: 12px; background: none repeat scroll 0px 0px rgba(2, 2, 2, 0.4); top: 152px; width: 500px; animation: 1.5s ease-in-out 0s alternate none infinite neon2; border: 1px dotted rgba(2, 2, 2, 0.5); box-shadow: 0px 0px 10px rgba(2, 2, 2, 0.5);"
             class="form">
@@ -27,8 +39,7 @@
                 <input class="input" type="password" id="password" name="password" value="" placeholder="Password">
                 <input class="input" type="submit" id="go" value="Login">
             </form>
-            <a data-toggle="modal" onclick="$('#modal_forget').dialog('open');" data-target="#modal_forget" id="forget"
-                href="#/trade.php/trader/connection/formGetPassword">I forgot my password</a>
+           <a data-toggle="modal" onclick="$( '#modal_forget' ).dialog( 'open' );" data-target="#modal_forget" id="forget" href="#/trade.php/trader/connection/formGetPassword">I forgot my password</a>
         </div>
     </div>
 
@@ -72,13 +83,15 @@
     </div>
     <div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front ui-dialog-buttons ui-draggable ui-resizable" tabindex="-1"
         role="dialog" aria-describedby="modal_forget" style="display: none; position: absolute;" aria-labelledby="ui-id-1">
-        <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix ui-draggable-handle"><span id="ui-id-1" class="ui-dialog-title">forgot my password</span>
-            <button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close"
-                role="button" title="Close"><span class="ui-button-icon-primary ui-icon ui-icon-closethick"></span>
+        
+        <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix ui-draggable-handle">
+            <div id="ui-id-1" class="ui-dialog-title">forgot my password</div>
+            <button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close" role="button" title="Close">
+                <span class="ui-button-icon-primary ui-icon ui-icon-closethick"></span>
                 <span class="ui-button-text">Close</span>
             </button>
         </div>
-        <div id="modal_forget" style="" class="ui-dialog-content ui-widget-content">
+        <div id="modal_forget" class="ui-dialog-content ui-widget-content">
             Email : <input type="text" value="" name="login" id="inpt_forget_login">
             <br><br>
             <span id="msg_forget_pass"></span>

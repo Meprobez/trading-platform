@@ -18,7 +18,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, './app/static/'),
 		//Setting publicPath to an absolute url (including domain) resulted in urls (and source maps) being generated properly 
-		publicPath: "http://localhost:9000/static/", 
+		publicPath: "http://localhost:8080/static/", 
         filename: "[name].min.js",
     	chunkFilename: "[name].[chunkhash].js"
     },
@@ -55,9 +55,9 @@ module.exports = {
 									minimize: true
 								}
 					}
-			},
+			}/*,
 			{ test: /bootstrap.+\.(jsx|js)$/, loader: 'imports-loader?jQuery=jquery,$=jquery,this=>window'},
-			{ test: /bootstrap.+\.(jsx|js)$/, loader: 'imports-loader?Tether=tether,this=>window'}
+			{ test: /bootstrap.+\.(jsx|js)$/, loader: 'imports-loader?Tether=tether,this=>window'}*/
         ]
     },
 	plugins: [

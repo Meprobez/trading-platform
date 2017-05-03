@@ -1,7 +1,7 @@
 'use strict';
 
 // Define your Application Module module
-angular.module('', [
+angular.module('trading-platform', [
   'ngAnimate',
   'ngRoute',
   'ui.router',

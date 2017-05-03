@@ -6,96 +6,95 @@
   "repository": "",
   "license": "Private",
   "devDependencies": {
-    
-	"bower": "^1.8.0",
+    "auto-install-webpack-plugin": ">=1.2.3",
+    "autoprefixer": ">=6.7.7",
+    "babel-core": ">=6.24.1",
+    "babel-loader": ">=6.4.1",
+    "babel-polyfill": ">=6.23.0",
+    "babel-preset-env": ">=1.3.2",
+    "base64-inline-loader": ">=1.1.0",
+    "bower": "^1.8.0",
+    "bower-resolve-webpack-plugin": ">=1.0.2",
+    "chunk-manifest-webpack-plugin": ">=1.0.0",
+    "css-loader": ">=0.28.0",
+    "eslint": ">=3.19.0",
+    "express": "^4.15.2",
+    "express-generator": "^4.15.0",
+    "express-http-proxy": "^1.0.2",
+    "extract-text-webpack-plugin": ">=2.1.0",
+    "file-loader": "^0.9.0",
+    "html-loader": ">=0.4.5",
+    "htmlhint": ">=0.9.13",
+    "http-proxy": "^1.16.2",
     "http-server": "^0.9.0",
-	"typings":">=2.1.1",
-     
-	"jasmine-core": "^2.4.1",
+    "image-webpack-loader": ">=3.3.0",
+    "imagemin-cli": ">=3.0.0",
+    "imports-loader": ">=0.7.1",
+    "jasmine-core": "^2.4.1",
     "karma": "^0.13.22",
     "karma-chrome-launcher": "^0.2.3",
     "karma-firefox-launcher": "^0.1.7",
     "karma-jasmine": "^0.3.8",
-	"karma-junit-reporter": "^0.4.1",
+    "karma-junit-reporter": "^0.4.1",
+    "lodash": ">=4.17.4",
+    "minifier": ">=0.8.1",
+    "mocha": ">=3.2.0",
+    "node-sass": ">=4.5.2",
+    "optimize-css-assets-webpack-plugin": ">=1.3.1",
+    "postcss-cli": ">=3.0.0",
     "protractor": "^4.0.9",
-	"mocha":">=3.2.0",
-	
-	"webpack":">=2.4.1",
-	"webpack-dev-server":">=2.4.2",           
-	"bower-resolve-webpack-plugin":">=1.0.2",
-	"imports-loader":">=0.7.1",
-	"auto-install-webpack-plugin":">=1.2.3",
-	"webpack-manifest-plugin":">=1.1.0",
-	"chunk-manifest-webpack-plugin":">=1.0.0",
-	"webpack-chunk-hash":">=0.4.0",
-
-	"uglify-js":">=2.8.16",
-	"babel-preset-env":">=1.3.2",
-	"babel-core":">=6.24.1",
-	"babel-loader":">=6.4.1",
-	"babel-polyfill":">=6.23.0",
-	"lodash":">=4.17.4",
-	"eslint":">=3.19.0",
-	
-	"postcss-cli":">=3.0.0",
-	"autoprefixer":">=6.7.7",
-	"minifier":">=0.8.1",
-	"css-loader":">=0.28.0",
-	"style-loader": ">=0.16.1",	
-	"extract-text-webpack-plugin":">=2.1.0",
-	"optimize-css-assets-webpack-plugin":">=1.3.1",
-	"node-sass":">=4.5.2",
-	"sass-loader":">=6.0.3",
-	
-	"image-webpack-loader":">=3.3.0",
-	"imagemin-cli":">=3.0.0",
-	
-	"base64-inline-loader":">=1.1.0",
-	"systemjs":">=0.20.12",
-	"source-map-loader":">=0.2.1",
-	
-	"htmlhint":">=0.9.13",
-	"html-loader":">=0.4.5",
-	"file-loader": "^0.9.0",
-	"raw-loader": "^0.5.1"
+    "raw-loader": "^0.5.1",
+    "sass-loader": ">=6.0.3",
+    "source-map-loader": ">=0.2.1",
+    "style-loader": ">=0.16.1",
+    "systemjs": ">=0.20.12",
+    "typings": ">=2.1.1",
+    "uglify-js": ">=2.8.16",
+    "webpack": ">=2.4.1",
+    "webpack-chunk-hash": ">=0.4.0",
+    "webpack-dev-server": ">=2.4.2",
+    "webpack-manifest-plugin": ">=1.1.0"
   },
   "babel": {
-    "presets":[ ["env",{ "targets": { "uglify": true  } }] ]
-	},
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "uglify": true
+          }
+        }
+      ]
+    ]
+  },
   "typeAcquisition": {
-     "include": [
-         "lodash","angular","jquery","mocha","jasmine","protractor"
-     ]
- 	},
+    "include": [
+      "lodash",
+      "angular",
+      "jquery",
+      "mocha",
+      "jasmine",
+      "protractor"
+    ]
+  },
   "scripts": {
     "postinstall": "bower install && npm run install-types",
-	 
     "update-deps": "npm update",
     "postupdate-deps": "bower update",
-
-    "prestart": "npm run build",
-    "start": "http-server ./app  -a localhost -p 9000 -c7200 ",
-
+    "prestart": "",
+    "start": " node ./app/server.js",
     "pretest": "",
     "test": "karma start karma.conf.js",
     "test-single-run": "karma start karma.conf.js --single-run",
-
     "preupdate-webdriver": "",
-    "update-webdriver": "webdriver-manager update",
-
+    "update-webdriver": "npm update ./node_modules/protractor/node_modules/.bin/webdriver-manager ",
     "preprotractor": "npm run update-webdriver",
     "protractor": "protractor e2e-tests/protractor.conf.js",
-	
-	"install-types":"typings install dt~angular  && typings install -g dt~jquery && typings install dt~lodash && typings install -g dt~jasmine && typings install -g dt~protractor && typings install -g dt~mocha",
-
-	"imagemin":"imagemin ./app/application-data/images/* -o=./app/application-data/images-minified/",
-	
-	"build-css": "postcss -u autoprefixer -r ./app/*/*/*.css",
-	
-	"build-pack":"webpack --progress",
-   
+    "install-types": "typings install dt~angular  && typings install -g dt~jquery && typings install dt~lodash",
+    "imagemin": "imagemin ./app/application-data/images/* -o=./app/application-data/images-minified/",
+    "build-css": "postcss -u autoprefixer -r ./app/*/*/*.css",
+    "build-pack": "webpack --progress",
     "build": "npm run imagemin && npm run build-css && npm run build-pack",
-		
     "update-index-async": "node -e \"var fs=require('fs'),indexFile='app/index-async.html',loaderFile='app/bower_components/angular-loader/angular-loader.min.js',loaderText=fs.readFileSync(loaderFile,'utf-8').split(/sourceMappingURL=angular-loader.min.js.map/).join('sourceMappingURL=bower_components/angular-loader/angular-loader.min.js.map'),indexText=fs.readFileSync(indexFile,'utf-8').split(/\\/\\/@@NG_LOADER_START@@[\\s\\S]*\\/\\/@@NG_LOADER_END@@/).join('//@@NG_LOADER_START@@\\n'+loaderText+'    //@@NG_LOADER_END@@');fs.writeFileSync(indexFile,indexText);\""
   }
 }
