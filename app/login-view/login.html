@@ -18,14 +18,15 @@
     
 
     <script src="vendor.min.js"></script>
-   
+    <script src="app.config.js"></script>
+    <script src="app.run.js"></script>
     
     <link rel="stylesheet" type="text/css" href="login.css">
     <script src="login.js"></script>
 
     
 </head>
-<body >
+<body>
     <div class="wraper">
         <div style="margin: 0px auto; position: relative; border-radius: 6px; padding: 12px; background: none repeat scroll 0px 0px rgba(2, 2, 2, 0.4); top: 152px; width: 500px; animation: 1.5s ease-in-out 0s alternate none infinite neon2; border: 1px dotted rgba(2, 2, 2, 0.5); box-shadow: 0px 0px 10px rgba(2, 2, 2, 0.5);"
             class="form">
@@ -85,7 +86,7 @@
         role="dialog" aria-describedby="modal_forget" style="display: none; position: absolute;" aria-labelledby="ui-id-1">
         
         <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix ui-draggable-handle">
-            <div id="ui-id-1" class="ui-dialog-title">forgot my password</div>
+            <span id="ui-id-1" class="ui-dialog-title">forgot my password</span>
             <button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close" role="button" title="Close">
                 <span class="ui-button-icon-primary ui-icon ui-icon-closethick"></span>
                 <span class="ui-button-text">Close</span>
@@ -99,10 +100,10 @@
         <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
             <div class="ui-dialog-buttonset">
                 <button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button">
-                    <span class="ui-button-text">Send</span>
+                    <span class="ui-button-text"></span>
                 </button>
                 <button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button">
-                    <span class="ui-button-text">Cancel</span>
+                    <span class="ui-button-text"></span>
                 </button>
             </div>
         </div>

@@ -9,7 +9,9 @@ $(function(){
 		buttons: {
         "Send": function() {
 			jQuery('#msg_forget_pass').text("Loading");
-			jQuery.getJSON("/trade.php/trader/connection/getPassword",{login:jQuery("#inpt_forget_login").val() },function(data){
+            console.log(buttons);
+			jQuery.getJSON("/trade.php/trader/connection/getPassword", {login:jQuery("#inpt_forget_login").val() }, function(data)
+            {
 				jQuery('#msg_forget_pass').text(data["message"]);
 			})
         },

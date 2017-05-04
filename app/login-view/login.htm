@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<!-- saved from url=(0115)http://devsharewallet.airsoftltd.com/trade.php/trader/connection/login#/trade.php/trader/connection/formGetPassword -->
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title></title>
+</head>
+
+<body>
+    <script src="./login_files/jquery.min.js.download"></script>
+    <link rel="stylesheet" href="./login_files/jquery-ui.css">
+    <script src="./login_files/jquery-ui.min.js.download"></script>
+
+    <script>
+        $(function () {
+            $("#modal_forget").dialog({
+                autoOpen: false,
+                modal: true,
+                buttons: {
+                    "Send": function () {
+                        jQuery('#msg_forget_pass').text("Loading");
+                        jQuery.getJSON("/trade.php/trader/connection/getPassword", { login: jQuery("#inpt_forget_login").val() }, function (data) {
+                            jQuery('#msg_forget_pass').text(data["message"]);
+                        })
+                    },
+                    Cancel: function () {
+                        $(this).dialog("close");
+                    }
+                }
+            });
+        });
+
+    </script>
+    <style>
+        body {
+            margin: 0px;
+            font-size: 11px;
+        }
+        
+        .wraper {
+            background: -webkit-linear-gradient(90deg, #283048 10%, #859398 90%);
+            /* Chrome 10+, Saf5.1+ */
+            background: -moz-linear-gradient(90deg, #283048 10%, #859398 90%);
+            /* FF3.6+ */
+            background: -ms-linear-gradient(90deg, #283048 10%, #859398 90%);
+            /* IE10 */
+            background: -o-linear-gradient(90deg, #283048 10%, #859398 90%);
+            /* Opera 11.10+ */
+            background: linear-gradient(90deg, #283048 10%, #859398 90%);
+            /* W3C */
+            font-size: 15px;
+            font-family: sans-serif;
+            display: block;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            left: 0px;
+            bottom: 0px;
+            display: block;
+        }
+        
+        .input {
+            background: none repeat scroll 0 0 rgba(0, 0, 0, 0.16);
+            border: 0 none;
+            border-radius: 4px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3) inset, 0 1px rgba(255, 255, 255, 0.06);
+            box-sizing: border-box;
+            color: white;
+            height: 40px;
+            left: 91px;
+            margin: 6px;
+            padding: 0 10px;
+            position: relative;
+            text-shadow: 1px 1px 1px black;
+            top: -19px;
+            width: 300px;
+        }
+        
+        a {
+            color: #00a1d2;
+        }
+        
+        #go:hover {
+            background: #2cafe3;
+            /* Old browsers */
+            background: -moz-linear-gradient(top, #2cafe3 0%, #49c0f0 100%);
+            /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #2cafe3), color-stop(100%, #49c0f0));
+            /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top, #2cafe3 0%, #49c0f0 100%);
+            /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top, #2cafe3 0%, #49c0f0 100%);
+            /* Opera 11.10+ */
+            background: -ms-linear-gradient(top, #2cafe3 0%, #49c0f0 100%);
+            /* IE10+ */
+            background: linear-gradient(to bottom, #2cafe3 0%, #49c0f0 100%);
+            /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2cafe3', endColorstr='#49c0f0', GradientType=0);
+            /* IE6-9 */
+        }
+        
+        #go {
+            background: #49c0f0;
+            /* Old browsers */
+            background: -moz-linear-gradient(top, #49c0f0 0%, #2cafe3 100%);
+            /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #49c0f0), color-stop(100%, #2cafe3));
+            /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top, #49c0f0 0%, #2cafe3 100%);
+            /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top, #49c0f0 0%, #2cafe3 100%);
+            /* Opera 11.10+ */
+            background: -ms-linear-gradient(top, #49c0f0 0%, #2cafe3 100%);
+            /* IE10+ */
+            background: linear-gradient(to bottom, #49c0f0 0%, #2cafe3 100%);
+            /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#49c0f0', endColorstr='#2cafe3', GradientType=0);
+            /* IE6-9 */
+            left: 93px;
+            position: relative;
+            top: -10px;
+            cursor: pointer;
+            transition: all 0.3s
+        }
+        
+        #forget {
+            font-size: 12px;
+            padding-left: 100px;
+        }
+        
+        #logo {
+            padding-left: 82px;
+        }
+    </style>
+
+    <div class="wraper">
+        <div style="margin: 0px auto; position: relative; border-radius: 6px; padding: 12px; background: none repeat scroll 0px 0px rgba(2, 2, 2, 0.4); top: 152px; width: 500px; animation: 1.5s ease-in-out 0s alternate none infinite neon2; border: 1px dotted rgba(2, 2, 2, 0.5); box-shadow: 0px 0px 10px rgba(2, 2, 2, 0.5);"
+            class="form">
+            <a href="http://devsharewallet.airsoftltd.com/">
+                <div id="logo" style="height: 100px;background-image: url(&#39;/trade.php/trader/default/getImage?name=logo_airsoft_white.png&amp;type=logo&#39;);background-repeat: no-repeat;background-size: 300px 80px;background-position: center;"></div>
+            </a>
+            <br>
+            <form id="login" target="_top" action="http://devsharewallet.airsoftltd.com/trade.php/trader/connection/in" method="post">
+                <input class="input" type="hidden" name="auth_url_return" value="/trader.php">
+                <input class="input" type="text" id="email" name="login" value="" placeholder="E-mail">
+                <input class="input" type="password" id="password" name="password" value="" placeholder="Password">
+                <input class="input" type="submit" id="go" value="Login">
+            </form>
+            <a data-toggle="modal" onclick="$( '#modal_forget' ).dialog( 'open' );" data-target="#modal_forget" id="forget" href="http://localhost:8080#/trade.php/trader/connection/formGetPassword">I forgot my password</a>
+        </div>
+    </div>
+
+
+    <style type="text/css">
+        #jxdb {
+            position: absolute;
+            right: 10px;
+            top: 0px;
+            left: auto;
+            margin: 0;
+            padding: 0px;
+            z-index: 1000;
+            font-size: 10pt;
+            font-family: arial;
+            font-weight: normal;
+            color: black;
+        }
+        
+        #jxdb-pjlx-a-right {
+            display: none;
+        }
+        
+        #jxdb-pjlx-a-left {
+            display: inline;
+        }
+        
+        #jxdb.jxdb-position-l {
+            left: 10px;
+            right: auto;
+        }
+        
+        #jxdb.jxdb-position-l #jxdb-pjlx-a-right {
+            display: inline;
+        }
+        
+        #jxdb.jxdb-position-l #jxdb-pjlx-a-left {
+            display: none;
+        }
+        
+        #jxdb-header {
+            padding: 3px;
+            font-size: 10pt;
+            color: #797979;
+            float: right;
+            z-index: 1200;
+            position: relative;
+            background: linear-gradient(top, #EFF4F6, #87CDEF);
+            background: -moz-linear-gradient(top, #EFF4F6, #87CDEF);
+            background: -webkit-linear-gradient(top, #EFF4F6, #87CDEF);
+            background-color: #EFF4F6;
+            border-radius: 0px 0px 5px 5px;
+            -webkit-border-bottom-right-radius: 5px;
+            -webkit-border-bottom-left-radius: 5px;
+            -o-border-radius: 0px 0px 5px 5px;
+            -moz-border-radius: 0px 0px 5px 5px;
+            box-shadow: #6B6F80 3px 3px 6px 0px;
+            -moz-box-shadow: #969CB4 3px 3px 6px 0px;
+            -webkit-box-shadow: #6B6F80 3px 3px 6px;
+            -o-box-shadow: #6B6F80 3px 3px 6px 0px;
+        }
+        
+        #jxdb.jxdb-position-l #jxdb-header {
+            float: left;
+        }
+        
+        #jxdb-header img {
+            vertical-align: middle;
+        }
+        
+        #jxdb-header a img {
+            border: 0px;
+        }
+        
+        #jxdb-header span {
+            display: inline-block;
+            border-right: 1px solid #93B6B8;
+            padding: 0 0.5em;
+            color: black;
+        }
+        
+        #jxdb-header a {
+            text-decoration: none;
+            color: black;
+        }
+        
+        #jxdb-header span a:hover {
+            text-decoration: underline;
+        }
+        
+        #jxdb-tabpanels {
+            clear: both;
+            color: black;
+            background-color: #CCE4ED;
+            z-index: 1100;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            max-height: 700px;
+            overflow: auto;
+            resize: both;
+            border-radius: 0px 0px 5px 5px;
+            -moz-border-radius: 0 0 5px 5px;
+            -o-border-radius: 0px 0px 5px 5px;
+            -webkit-border-bottom-left-radius: 5px;
+            -webkit-border-bottom-right-radius: 5px;
+            box-shadow: #6B6F80 3px 3px 3px 0px;
+            -moz-box-shadow: #969CB4 3px 3px 3px 0px;
+            -webkit-box-shadow: #6B6F80 3px 3px 3px;
+            -o-box-shadow: #6B6F80 3px 3px 3px 0px;
+        }
+        
+        #jxdb-tabpanels div.jxdb-tabpanel {
+            padding: 4px;
+        }
+        
+        .jxdb-list {
+            margin: 10px;
+            padding: 8px 8px 8px 8px;
+            list-style-type: none;
+        }
+        
+        .jxdb-list li {
+            margin: 3px 0;
+            padding: 0 0 0 0px;
+            background-color: #D0E6F4;
+        }
+        
+        .jxdb-list h5 a {
+            color: black;
+            text-decoration: none;
+            display: inline-block;
+            padding: 0 0 0 18px;
+            background-position: left center;
+            background-repeat: no-repeat;
+        }
+        
+        .jxdb-list h5 span {
+            display: inline-block;
+            padding: 0 0 0 18px;
+            background-position: left center;
+            background-repeat: no-repeat;
+        }
+        
+        .jxdb-list h5 {
+            display: block;
+            margin: 0;
+            padding: 0;
+            font-size: 12pt;
+            font-weight: normal;
+            background-color: #FFF9C2;
+        }
+        
+        .jxdb-list p {
+            margin: 0 0 0 18px;
+            font-size: 10pt;
+        }
+        
+        .jxdb-list table {
+            margin: 0 0 0 18px;
+            font-size: 9pt;
+            font-family: courier new, monospace;
+            color: #3F3F3F;
+            width: 100%;
+        }
+        
+        #jxdb-errors li {
+            background-color: inherit;
+        }
+        
+        #jxdb-errors li.jxdb-msg-error h5 {
+            background-color: #FFD3D3;
+        }
+        
+        #jxdb-errors li.jxdb-msg-notice h5 {
+            background-color: #DDFFE6;
+        }
+        
+        #jxdb-errors li.jxdb-msg-warning h5 {
+            background-color: #FFB94E;
+        }
+        
+        .jxdb-list li>div {
+            display: none;
+        }
+        
+        .jxdb-list li.jxdb-opened>div {
+            display: block;
+        }
+        
+        p.jxdb-msg-error {
+            background-color: #FFD3D3;
+        }
+        
+        p.jxdb-msg-warning {
+            background-color: #FFB94E;
+        }
+        
+        ul.jxdb-list li h5 a {
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAABjSURBVCjPY/jPgB8y0FHBkb37/+/6v+X/+v8r/y/ei0XB3v+H4HDWfywKtgAl1v7/D8SH/k/ApmANUAICDv1vx6ZgMZIJ9dgUzEJyQxk2BRPWdf1vAeqt/F/yP3/dwIQk2QoAfUogHsamBmcAAAAASUVORK5CYII=');
+        }
+        
+        ul.jxdb-list li.jxdb-opened h5 a {
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAABhSURBVCjPY/jPgB8y0FHBkb37/+/6v+X/+v8r/y/ei0XB3v+H4HDWfywKtgAl1oLhof8TsClYA5SAgEP/27EpWIxkQj02BbOQ3FCGTcGEdV3/W4B6K/+X/M9fNzAhSbYCAMiTH3pTNa+FAAAAAElFTkSuQmCC');
+        }
+        
+        #jxdb-errors li.jxdb-msg-error h5 span {
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAJPSURBVDjLpZPLS5RhFMYfv9QJlelTQZwRb2OKlKuINuHGLlBEBEOLxAu46oL0F0QQFdWizUCrWnjBaDHgThCMoiKkhUONTqmjmDp2GZ0UnWbmfc/ztrC+GbM2dXbv4ZzfeQ7vefKMMfifyP89IbevNNCYdkN2kawkCZKfSPZTOGTf6Y/m1uflKlC3LvsNTWArr9BT2LAf+W73dn5jHclIBFZyfYWU3or7T4K7AJmbl/yG7EtX1BQXNTVCYgtgbAEAYHlqYHlrsTEVQWr63RZFuqsfDAcdQPrGRR/JF5nKGm9xUxMyr0YBAEXXHgIANq/3ADQobD2J9fAkNiMTMSFb9z8ambMAQER3JC1XttkYGGZXoyZEGyTHRuBuPgBTUu7VSnUAgAUAWutOV2MjZGkehgYUA6O5A0AlkAyRnotiX3MLlFKduYCqAtuGXpyH0XQmOj+TIURt51OzURTYZdBKV2UBSsOIcRp/TVTT4ewK6idECAihtUKOArWcjq/B8tQ6UkUR31+OYXP4sTOdisivrkMyHodWejlXwcC38Fvs8dY5xaIId89VlJy7ACpCNCFCuOp8+BJ6A631gANQSg1mVmOxxGQYRW2nHMha4B5WA3chsv22T5/B13AIicWZmNZ6cMchTXUe81Okzz54pLi0uQWp+TmkZqMwxsBV74Or3od4OISPr0e3SHa3PX0f3HXKofNH/UIG9pZ5PeUth+CyS2EMkEqs4fPEOBJLsyske48/+xD8oxcAYPzs4QaS7RR2kbLTTOTQieczfzfTv8QPldGvTGoF6/8AAAAASUVORK5CYII=');
+        }
+        
+        #jxdb-errors li.jxdb-msg-notice h5 span {
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAKcSURBVDjLpZPLa9RXHMU/d0ysZEwmMQqZiTaP0agoaKGJUiwIxU0hUjtUQaIuXHSVbRVc+R8ICj5WvrCldJquhVqalIbOohuZxjDVxDSP0RgzyST9zdzvvffrQkh8tBs9yy9fPhw45xhV5X1U8+Yhc3U0LcEdVxdOVq20OA0ooQjhpnfhzuDZTx6++m9edfDFlZGMtXKxI6HJnrZGGtauAWAhcgwVnnB/enkGo/25859l3wIcvpzP2EhuHNpWF9/dWs/UnKW4EOGDkqhbQyqxjsKzMgM/P1ymhlO5C4ezK4DeS/c7RdzQoa3x1PaWenJjJZwT9rQ1gSp/js1jYoZdyfX8M1/mp7uFaTR8mrt29FEMQILr62jQ1I5kA8OF59jIItVA78dJertTiBNs1ZKfLNG+MUHX1oaURtIHEAOw3p/Y197MWHEJEUGCxwfHj8MTZIcnsGKxzrIURYzPLnJgbxvG2hMrKdjItjbV11CYKeG8R7ygIdB3sBMFhkem0RAAQ3Fuka7UZtRHrasOqhYNilOwrkrwnhCU/ON5/q04vHV48ThxOCuoAbxnBQB+am65QnO8FqMxNCjBe14mpHhxBBGCWBLxD3iyWMaYMLUKsO7WYH6Stk1xCAGccmR/Ozs/bKJuXS39R/YgIjgROloSDA39Deit1SZWotsjD8pfp5ONqZ6uTfyWn+T7X0f59t5fqDhUA4ry0fYtjJcWeZQvTBu4/VqRuk9/l9Fy5cbnX+6Od26s58HjWWaflwkusKGxjm1bmhkvLXHvh1+WMbWncgPfZN+qcvex6xnUXkzvSiYP7EvTvH4toDxdqDD4+ygT+cKMMbH+3MCZ7H9uAaDnqytpVX8cDScJlRY0YIwpAjcNcuePgXP/P6Z30QuoP4J7WbYhuQAAAABJRU5ErkJggg==');
+        }
+        
+        #jxdb-errors li.jxdb-msg-warning h5 span {
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAIsSURBVDjLpVNLSJQBEP7+h6uu62vLVAJDW1KQTMrINQ1vPQzq1GOpa9EppGOHLh0kCEKL7JBEhVCHihAsESyJiE4FWShGRmauu7KYiv6Pma+DGoFrBQ7MzGFmPr5vmDFIYj1mr1WYfrHPovA9VVOqbC7e/1rS9ZlrAVDYHig5WB0oPtBI0TNrUiC5yhP9jeF4X8NPcWfopoY48XT39PjjXeF0vWkZqOjd7LJYrmGasHPCCJbHwhS9/F8M4s8baid764Xi0Ilfp5voorpJfn2wwx/r3l77TwZUvR+qajXVn8PnvocYfXYH6k2ioOaCpaIdf11ivDcayyiMVudsOYqFb60gARJYHG9DbqQFmSVNjaO3K2NpAeK90ZCqtgcrjkP9aUCXp0moetDFEeRXnYCKXhm+uTW0CkBFu4JlxzZkFlbASz4CQGQVBFeEwZm8geyiMuRVntzsL3oXV+YMkvjRsydC1U+lhwZsWXgHb+oWVAEzIwvzyVlk5igsi7DymmHlHsFQR50rjl+981Jy1Fw6Gu0ObTtnU+cgs28AKgDiy+Awpj5OACBAhZ/qh2HOo6i+NeA73jUAML4/qWux8mt6NjW1w599CS9xb0mSEqQBEDAtwqALUmBaG5FV3oYPnTHMjAwetlWksyByaukxQg2wQ9FlccaK/OXA3/uAEUDp3rNIDQ1ctSk6kHh1/jRFoaL4M4snEMeD73gQx4M4PsT1IZ5AfYH68tZY7zv/ApRMY9mnuVMvAAAAAElFTkSuQmCC');
+        }
+        
+        .jxdb-jform-dump dt {
+            padding-top: 6px;
+            color: blue;
+            font-size: 11pt
+        }
+        
+        .jxdb-jform-dump dd {
+            font-size: 10pt;
+        }
+        
+        .jxdb-jform-dump table {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        
+        .jxdb-jform-dump table th,
+        .jxdb-jform-dump table td {
+            border: 1px solid black;
+        }
+    </style>
+    <script type="text/javascript">
+        //<![CDATA[
+        var jxdb = { plugins: {}, init: function (event) { for (var i in jxdb.plugins) jxdb.plugins[i].init() }, me: function () { return document.getElementById('jxdb') }, close: function () { document.getElementById('jxdb').style.display = "none" }, selectTab: function (tabPanelId) { var close = (document.getElementById(tabPanelId).style.display == 'block'); this.hideTab(); if (!close) { document.getElementById('jxdb-tabpanels').style.display = 'block'; document.getElementById(tabPanelId).style.display = 'block' } }, hideTab: function () { var panels = document.getElementById('jxdb-tabpanels').childNodes; for (var i = 0; i < panels.length; i++) { var elt = panels[i]; if (elt.nodeType == elt.ELEMENT_NODE) { elt.style.display = 'none' } } document.getElementById('jxdb-tabpanels').style.display = 'none' }, moveTo: function (side) { document.getElementById('jxdb').setAttribute('class', 'jxdb-position-' + side); this.createCookie('jxdebugbarpos', side) }, createCookie: function (name, value) { var date = new Date(); date.setTime(date.getTime() + (7 * 24 * 60 * 60 * 1000)); document.cookie = name + "=" + value + "; expires=" + date.toGMTString() + "; path=/" }, toggleDetails: function (anchor) { var item = anchor.parentNode.parentNode; var cssclass = item.getAttribute('class'); if (cssclass == null) cssclass = ''; if (cssclass.indexOf('jxdb-opened') == -1) { item.setAttribute('class', cssclass + " jxdb-opened"); item.childNodes[3].style.display = 'block' } else { item.setAttribute('class', cssclass.replace("jxdb-opened", '')); item.childNodes[3].style.display = 'none' } } }; if (window.addEventListener) window.addEventListener("load", jxdb.init, false);
+        jxdb.plugins.errors = {
+            init: function () {
+            }
+        }; //]]>
+
+    </script>
+    <div id="jxdb" class="jxdb-position-r">
+        <div id="jxdb-header">
+            <a href="javascript:jxdb.selectTab(&#39;jxdb-panel-jelix&#39;);"><img src="data:image/png;base64,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"
+                    alt="Jelix debug toolbar"></a>
+            <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAKfSURBVDjLpZPrS1NhHMf9O3bOdmwDCWREIYKEUHsVJBI7mg3FvCxL09290jZj2EyLMnJexkgpLbPUanNOberU5taUMnHZUULMvelCtWF0sW/n7MVMEiN64AsPD8/n83uucQDi/id/DBT4Dolypw/qsz0pTMbj/WHpiDgsdSUyUmeiPt2+V7SrIM+bSss8ySGdR4abQQv6lrui6VxsRonrGCS9VEjSQ9E7CtiqdOZ4UuTqnBHO1X7YXl6Daa4yGq7vWO1D40wVDtj4kWQbn94myPGkCDPdSesczE2sCZShwl8CzcwZ6NiUs6n2nYX99T1cnKqA2EKui6+TwphA5k4yqMayopU5mANV3lNQTBdCMVUA9VQh3GuDMHiVcLCS3J4jSLhCGmKCjBEx0xlshjXYhApfMZRP5CyYD+UkG08+xt+4wLVQZA1tzxthm2tEfD3JxARH7QkbD1ZuozaggdZbxK5kAIsf5qGaKMTY2lAU/rH5HW3PLsEwUYy+YCcERmIjJpDcpzb6l7th9KtQ69fi09ePUej9l7cx2DJbD7UrG3r3afQHOyCo+V3QQzE35pvQvnAZukk5zL5qRL59jsKbPzdheXoBZc4saFhBS6AO7V4zqCpiawuptwQG+UAa7Ct3UT0hh9p9EnXT5Vh6t4C22QaUDh6HwnECOmcO7K+6kW49DKqS2DrEZCtfuI+9GrNHg4fMHVSO5kE7nAPVkAxKBxcOzsajpS4Yh4ohUPPWKTUh3PaQEptIOr6BiJjcZXCwktaAGfrRIpwblqOV3YKdhfXOIvBLeREWpnd8ynsaSJoyESFphwTtfjN6X1jRO2+FxWtCWksqBApeiFIR9K6fiTpPiigDoadqCEag5YUFKl6Yrciw0VOlhOivv/Ff8wtn0KzlebrUYwAAAABJRU5ErkJggg==" alt="no errors" title="no errors"> 0</span><span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAEYSURBVBgZBcHPio5hGAfg6/2+R980k6wmJgsJ5U/ZOAqbSc2GnXOwUg7BESgLUeIQ1GSjLFnMwsKGGg1qxJRmPM97/1zXFAAAAEADdlfZzr26miup2svnelq7d2aYgt3rebl585wN6+K3I1/9fJe7O/uIePP2SypJkiRJ0vMhr55FLCA3zgIAOK9uQ4MS361ZOSX+OrTvkgINSjS/HIvhjxNNFGgQsbSmabohKDNoUGLohsls6BaiQIMSs2FYmnXdUsygQYmumy3Nhi6igwalDEOJEjPKP7CA2aFNK8Bkyy3fdNCg7r9/fW3jgpVJbDmy5+PB2IYp4MXFelQ7izPrhkPHB+P5/PjhD5gCgCenx+VR/dODEwD+A3T7nqbxwf1HAAAAAElFTkSuQmCC" alt="SQL queries" title="SQL queries"> 0</span><span><a href="javascript:jxdb.selectTab(&#39;jxdb-panel-sessiondata&#39;);"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAJaSURBVDjLpVPNi1JRFP89v2f8RHHGaqOCJFNuohki+oBxE7Sp1oFQLXPXbqDFUG1btOgvyIKBoFmUixSJqERIzbFJ05lRpHn6xoYcP0af+nrnlmKBqzlwOPe+d3/nd37n3MtJkoSjmAJHNNVokcvlIoPBYFl29Pt9iKI49l6vN/Zut0sxGggE/ITjSIIMvqzRaGJ2u50d+t8mZarVasRiMZRKJX8wGIyyCmTG+xaLBTzPQ6vVjkGTQFpXKhWYTCa4XC4iXZE/R7lMJsPYbTYbGo3GP+WSFAJyHAelUsnYjUYj9Ho9wuEwCoWCX0XsVDpppUM6nY75iL3T6eDt86c4TL3E4VDeW0/h2t1V+Hw+ZLPZFRUxtVotCILAGkTA4XAIaibFr58i6Hx5hYEkQuKUaJYTePbkAW7cuceqpATLxEQbAsmSWMkKxZ8J86kI5ubdsJmNpBtmxzHUhTzMci8IqyJW0kpOCcgpAbGTGRxO3Axch35Gh4P6LlQGG16vr0P8O2qWYAQkkNfrZZGc5HzYrWEzGceZpSWYrHPY2cojJehwUv4/TkAToASj0Y36kE6nsbVdRHRmAfG195hVA8WDWTQlLRKJBKuaC4VCb2QtVyZuGYtCrcbGxVeraLfbOHf+AuYdDqy9CLFR0kj39oRv3LTHtPHw7DZ//KrzXVmD5q86qnIiYqSLptbqcem0HYvix/7Ux2SwnYjv72RQrvyA1WqF2+1mYI/HA3EwRHnzM/QmY0o1LYFkdd7mftYfFQvfbzX3qxflSg0kLZlMDip8fWNh0f6YszjyvwFmK4mzFto0SwAAAABJRU5ErkJggg==" alt="Session data" title="Session data"> 1</a></span><span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAIASURBVDjLpVPPaxNREJ6Vt01caH4oWk1T0ZKlGIo9RG+BUsEK4kEP/Q8qPXnpqRdPBf8A8Wahhx7FQ0GF9FJ6UksqwfTSBDGyB5HkkphC9tfb7jfbtyQQTx142byZ75v5ZnZWC4KALmICPy+2DkvKIX2f/POz83LxCL7nrz+WPNcll49DrhM9v7xdO9JW330DuXrrqkFSgig5iR2Cfv3t3gNxOnv5BwU+eZ5HuON5/PMPJZKJ+yKQfpW0S7TxdC6WJaWkyvff1LDaFRAeLZj05MHsiPTS6hua0PUqtwC5sHq9zv9RYWl+nu5cETcnJ1M0M5WlWq3GsX6/T+VymRzHDluZiGYAAsw0TQahV8uyyGq1qFgskm0bHIO/1+sx1rFtchJhArwEyIQ1Gg2WD2A6nWawHQJVDIWgIJfLhQowTIeE9D0mKAU8qPC0220afsWFQoH93W6X7yCDJ+DEBeBmsxnPIJVKxWQVUwry+XyUwBlKMKwA8jqdDhOVCqVAzQDVvXAXhOdGBFgymYwrGoZBmUyGjxCCdF0fSahaFdgoTHRxfTveMCXvWfkuE3Y+f40qhgT/nMitupzApdvT18bu+YeDQwY9Xl4aG9/d/URiMBhQq/dvZMeVghtT17lSZW9/rAKsvPa/r9Fc2dw+Pe0/xI6kM9mT5vtXy+Nw2kU/5zOGRpvuMIu0YAAAAABJRU5ErkJggg==" alt="General logs" title="General logs"> 0</span>
+            <a href="javascript:jxdb.close();"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAHdSURBVDjLpZNraxpBFIb3a0ggISmmNISWXmOboKihxpgUNGWNSpvaS6RpKL3Ry//Mh1wgf6PElaCyzq67O09nVjdVlJbSDy8Lw77PmfecMwZg/I/GDw3DCo8HCkZl/RlgGA0e3Yfv7+DbAfLrW+SXOvLTG+SHV/gPbuMZRnsyIDL/OASziMxkkKkUQTJJsLaGn8/iHz6nd+8mQv87Ahg2H9Th/BxZqxEkEgSrq/iVCvLsDK9awtvfxb2zjD2ARID+lVVlbabTgWYTv1rFL5fBUtHbbeTJCb3EQ3ovCnRC6xAgzJtOE+ztheYIEkqbFaS3vY2zuIj77AmtYYDusPy8/zuvunJkDKXM7tYWTiyGWFjAqeQnAD6+7ueNx/FLpRGAru7mcoj5ebqzszil7DggeF/DX1nBN82rzPqrzbRayIsLhJqMPT2N83Sdy2GApwFqRN7jFPL0tF+10cDd3MTZ2AjNUkGCoyO6y9cRxfQowFUbpufr1ct4ZoHg+Dg067zduTmEbq4yi/UkYidDe+kaTcP4ObJIajksPd/eyx3c+N2rvPbMDPbUFPZSLKzcGjKPrbJaDsu+dQO3msfZzeGY2TCvKGYQhdSYeeJjUt21dIcjXQ7U7Kv599f4j/oF55W4g/2e3b8AAAAASUVORK5CYII="
+                    alt="close" title="click to close the debug toolbar"></a>
+        </div>
+        <div id="jxdb-tabpanels">
+            <div id="jxdb-panel-jelix" class="jxdb-tabpanel" style="display:none">
+                <ul>
+                    <li>Jelix version: 1.6.0</li>
+                    <li>Move the debug bar <a id="jxdb-pjlx-a-right" href="javascript:jxdb.moveTo(&#39;r&#39;)">to right</a>
+                        <a href="javascript:jxdb.moveTo(&#39;l&#39;)" id="jxdb-pjlx-a-left">to left</a></li>
+                    <li>To remove it definitively, deactivate the plugin "debugbar"<br> into the configuration</li>
+                </ul>
+            </div>
+            <div id="jxdb-panel-sessiondata" class="jxdb-tabpanel" style="display:none">
+                <ul id="jxdb-sessiondata" class="jxdb-list">
+                    <li>
+                        <h5><a href="http://devsharewallet.airsoftltd.com/trade.php/trader/connection/login#" onclick="jxdb.toggleDetails(this);return false;"><span>JELIX_USER_TRADEIN_FO</span></a></h5>
+                        <div>
+                            <pre>jAuthDummyUser::__set_state(array(
+   'login' =&gt; '',
+   'email' =&gt; '',
+))</pre>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-front ui-dialog-buttons ui-draggable ui-resizable" tabindex="-1"
+        role="dialog" aria-describedby="modal_forget" style="display: none; position: absolute;" aria-labelledby="ui-id-1">
+        <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix ui-draggable-handle"><span id="ui-id-1" class="ui-dialog-title">forgot my password</span><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-icon-only ui-dialog-titlebar-close"
+                role="button" title="Close"><span class="ui-button-icon-primary ui-icon ui-icon-closethick"></span><span class="ui-button-text">Close</span></button></div>
+        <div
+            id="modal_forget" style="" class="ui-dialog-content ui-widget-content">
+            Email : <input type="text" value="" name="login" id="inpt_forget_login">
+            <br><br>
+            <span id="msg_forget_pass"></span>
+    </div>
+    <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+        <div class="ui-dialog-buttonset"><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Send</span></button>
+            <button
+                type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Cancel</span></button>
+        </div>
+    </div>
+    <div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div>
+    <div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div>
+    </div>
+</body>
+
+</html>

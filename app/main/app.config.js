@@ -42,5 +42,5 @@ function config($provide,$compileProvider,$filterProvider,$routeProvider,$locati
     'https://some.dataserver.com/**.jsonp?**'
   ]);
   
-  $routeProvider.when('/',{redirectTo: "/"}); //aheret localhost:port yiten wgiya, vekaha ze yaavor le localhost:port/#!/
+  //$routeProvider.when('/',{redirectTo: "/"}); //aheret localhost:port yiten wgiya, vekaha ze yaavor le localhost:port/#!/
 }

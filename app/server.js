@@ -7,11 +7,12 @@ var proxy = require('express-http-proxy');
 
 // New hostname+path as specified by question:
 var apiProxy = proxy('http://devsharewallet.airsoftltd.com/', {
-    forwardPath: function (req, res) {
+    proxyReqPathResolver: function (req, res) {
         return require('url').parse(req.baseUrl).path;
     }
 });
 app.use("/trade*", apiProxy); //proxing all requests to http://devsharewallet.airsoftltd.com/
+app.use("/cdn*", apiProxy);
 
 app.use(express.static(path.join(__dirname,'login-view'))); //Dont need to include Folder name
 app.use(express.static(path.join(__dirname,'static'))); //in our HTML, only File name (inside Folder do insert)
@@ -28,7 +29,7 @@ app.get('/', function (req, res) {
   };
  
 
-  var fileName = "login.html";
+  var fileName = "login.htm";
   res.sendFile(fileName, options, function (err) {
     if (err) {
       next(err);
