@@ -11,16 +11,20 @@ var apiProxy = proxy('http://devsharewallet.airsoftltd.com/', {
         return require('url').parse(req.baseUrl).path;
     }
 });
+
 app.use("/trade*", apiProxy); //proxing all requests to http://devsharewallet.airsoftltd.com/
 app.use("/cdn*", apiProxy);
+
+/*Serving static files*/
 
 app.use(express.static(path.join(__dirname,'login-view'))); //Dont need to include Folder name
 app.use(express.static(path.join(__dirname,'static'))); //in our HTML, only File name (inside Folder do insert)
 app.use(express.static(path.join(__dirname,'main')));
+
 //Entry point - login.html
 app.get('/', function (req, res) {
   var options = {
-    root: __dirname + '/login-view/',
+    root: __dirname + "/login-view",
     dotfiles: 'deny',
     headers: {
       'x-timestamp': Date.now(),
@@ -28,7 +32,6 @@ app.get('/', function (req, res) {
     }
   };
  
-
   var fileName = "login.html";
   res.sendFile(fileName, options, function (err) {
     if (err) {

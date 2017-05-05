@@ -42,13 +42,14 @@ function config($provide,$compileProvider,$filterProvider,$routeProvider,$locati
     'https://some.dataserver.com/**.jsonp?**'
   ]);
   
-  $routeProvider.when('/',{redirectTo: "/login"}); //aheret localhost:port yiten wgiya, vekaha ze yaavor le localhost:port/#!/
+  $routeProvider.when('/',{redirectTo: "/trade.php/trader/connection/login"}); //aheret localhost:port yiten wgiya, vekaha ze yaavor le localhost:port/#!/
 
   var login = {
     name: 'login',
-    url: '/login',
+    url: '/trade.php/trader/connection/login',
     sticky: true,
     component:'login'
   };
   $stateProvider.state(login);
+  console.log(angular.module('trading-platform'));
 }

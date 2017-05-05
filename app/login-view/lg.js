@@ -17,6 +17,7 @@ function loginController()
 
 function toggleDialog()
 {
+  alert('modal');
 	$(function(){
     $( "#modal_forget" ).dialog({
       autoOpen: false,

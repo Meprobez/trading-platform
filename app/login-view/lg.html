@@ -11,7 +11,7 @@
                 <input class="input" type="password" id="password" name="password" value="" placeholder="Password">
                 <input class="input" type="submit" id="go" value="Login">
             </form>
-            <a data-toggle="modal" onclick="$( '#modal_forget' ).dialog( 'open' );" data-target="#modal_forget" id="forget" href="#/trade.php/trader/connection/formGetPassword">I forgot my password</a>
+            <a data-toggle="modal" ng-click="toggleDialog()" data-target="#modal_forget" id="forget" href="#/trade.php/trader/connection/formGetPassword">I forgot my password</a>
         </div>
     </div>
 
