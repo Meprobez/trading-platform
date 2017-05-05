@@ -9,21 +9,24 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="fragment" content="!"/>
 	<base href="/">
-	<link rel="apple-touch-icon" href="apple-touch-icon.png">
-	
+		
 	<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 	
 <!-- for development application Files must be loaded separately -->
-	<script src="./static/vendor.min.js"></script>
-	<link rel="stylesheet" href="./static/vendor.min.css" />
-	
-	<script src="main/app.config.js"></script>
-	<script src="main/app.run.js"></script>
-		
-	<link rel="stylesheet" href="main/css/app.css" />
+	<script src="vendor.min.js"></script>
+
+    <script src="login_files/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="login_files/jquery-ui.css">
+    <script src="login_files/jquery-ui.min.js"></script>
+
+    <script src="app.config.js"></script>
+    <script src="app.run.js"></script>
+
+    <script src="lg.js"></script>
+    <link rel="stylesheet" type="text/css" href="login.css">
 		
 <head>
-<body ng-app="">
+<body ng-app="trading-platform">
 	<p>This is the starting point of your App</p>
 
 <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->

@@ -1,8 +1,23 @@
-"use strict";
+'use strict';
 
-/*User forgot password dialog box*/
+// Define your Application Module module
+angular.module('trading-platform')
+.component('login',{
+	templateUrl:'lg.html',
+	transclude:true,
+	replace:true,
+	controller:loginController
+})
+//$( '#modal_forget' ).dialog( 'open' );
+function loginController()
+{
+	var self = this;
+	self.toggleDialog = toggleDialog;
+}
 
-$(function(){
+function toggleDialog()
+{
+	$(function(){
     $( "#modal_forget" ).dialog({
       autoOpen: false,
        modal: true,
@@ -21,3 +36,4 @@ $(function(){
       }
     });
 });
+}

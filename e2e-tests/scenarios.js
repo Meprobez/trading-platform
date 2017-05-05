@@ -9,7 +9,6 @@ describe('trading-platform', function()
     beforeEach(function() 
     {
       browser.ignoreSynchronization = true;             //Disabling waiting for Angular for non-Angular web pages
-     // browser.driver.manage().window().maximize();
       browser.get('http://localhost:8080/');            //Before Test get login.html
     });
 
@@ -71,7 +70,6 @@ describe('trading-platform', function()
 
       var go = browser.findElement(by.id('go'));
 
-      //browser.actions().mouseMove(go).mouseDown(go).mouseUp().perform();
       go.click();
       expect(browser.getCurrentUrl()).toBe('http://localhost:8080/trade.php/trader/');
     });
