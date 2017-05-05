@@ -29,7 +29,7 @@ app.get('/', function (req, res) {
   };
  
 
-  var fileName = "login.htm";
+  var fileName = "login.html";
   res.sendFile(fileName, options, function (err) {
     if (err) {
       next(err);
