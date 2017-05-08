@@ -15,6 +15,7 @@
 	  "xml2json.min.js":"1.2.x",
     "localforage":"latest",
     "angular-localforage":"latest",
-    "baobab-angular":"latest"
+    "baobab-angular":"latest",
+    "flux-angular": "latest"
   }
 }
