@@ -1,15 +1,15 @@
 'use strict';
 
 // Define your Application Module module
-angular.module('trading-platform')
-.component('login',{
-	templateUrl:'lg.html',
-	transclude:true,
+angular.module('login')
+.component('forgetPassword',
+{
+	templateUrl:'forgetPassword-component/forgetPassword-component.html',
 	replace:true,
-	controller:loginController
+	controller:forgetPasswordController
 })
 //$( '#modal_forget' ).dialog( 'open' );
-function loginController()
+function forgetPasswordController()
 {
 	var self = this;
 	self.toggleDialog = toggleDialog;
@@ -17,24 +17,24 @@ function loginController()
 
 function toggleDialog()
 {
-  alert('modal');
-	$(function(){
     $( "#modal_forget" ).dialog({
-      autoOpen: false,
+      autoOpen: true,
        modal: true,
        title: "forgot my password",
 		buttons: {
-        "Send": function() {
-			jQuery('#msg_forget_pass').text("Loading");
+        "Send": function() 
+        {
+		    jQuery('#msg_forget_pass').text("Loading");
 			jQuery.getJSON("/trade.php/trader/connection/getPassword", {login:jQuery("#inpt_forget_login").val() }, function(data)
             {
 				jQuery('#msg_forget_pass').text(data["message"]);
 			})
         },
-        Cancel: function() {
+        Cancel: function() 
+        {
           $( this ).dialog( "close" );
         }
       }
     });
-});
+
 }

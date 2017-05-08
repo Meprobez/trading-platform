@@ -22,13 +22,15 @@
     <script src="app.config.js"></script>
     <script src="app.run.js"></script>
 
-    <script src="lg.js"></script>
-    <link rel="stylesheet" type="text/css" href="login.css">
+    <script src="login.config.js"></script>
+    <script src="login-component/login-component.js"></script>
+    <link rel="stylesheet" type="text/css" href="login-component/login-component.css">
+
+    <script src="forgetPassword-component/forgetPassword-component.js"></script>
 		
 <head>
 <body ng-app="trading-platform">
-	<p>This is the starting point of your App</p>
-<ui-view></ui-view>
+<ng-view class="ng-cloak"></ng-view>
 <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
         <script>
             window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;

@@ -8,8 +8,8 @@ describe('trading-platform', function()
   {
     beforeEach(function() 
     {
-      browser.ignoreSynchronization = true;             //Disabling waiting for Angular for non-Angular web pages
-      browser.get('http://localhost:8080/');            //Before Test get login.html
+      //browser.ignoreSynchronization = true;             //Disabling waiting for Angular for non-Angular web pages
+      browser.get('/');            //Before Test get login.html
     });
 
     it('should check text of forgot_password dialog Toggle window and verify that it is displayed', function() 

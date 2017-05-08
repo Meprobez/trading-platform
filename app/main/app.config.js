@@ -6,6 +6,7 @@ angular.module('trading-platform', [
   'ngRoute',
   'ui.router',
   'spell',
+	'login'
 ])
 .config(config);
 
@@ -39,17 +40,11 @@ function config($provide,$compileProvider,$filterProvider,$routeProvider,$locati
     // Allow same origin resource loads.
     'self',
     // Allow JSONP calls that match this pattern
-    'https://some.dataserver.com/**.jsonp?**'
+    'http://devsharewallet.airsoftltd.com/**.jsonp?**'
   ]);
   
-  $routeProvider.when('/',{redirectTo: "/trade.php/trader/connection/login"}); //aheret localhost:port yiten wgiya, vekaha ze yaavor le localhost:port/#!/
-
-  var login = {
-    name: 'login',
-    url: '/trade.php/trader/connection/login',
-    sticky: true,
-    component:'login'
-  };
-  $stateProvider.state(login);
+  $routeProvider.when('/',{redirectTo: "/trade.php/trader/connection/login"}) //aheret localhost:port yiten wgiya, vekaha ze yaavor le localhost:port/#!/
+ 								.when('/trade.php/trader/connection/login',{template:'<login></login><forget-password></forget-password>'})
+							  .when('/trade.php/trader/connection/formGetPassword',{template:'<login></login>'});
   console.log(angular.module('trading-platform'));
 }

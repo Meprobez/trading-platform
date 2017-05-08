@@ -11,7 +11,10 @@
     "angular-mocks": "1.6.x",
     "angular-resource": "1.6.x",
     "angular-route": "1.6.x",
-	"angular-ui-router":"1.0.0-rc.1",
-	"xml2json.min.js":"1.2.x"
+	  "angular-ui-router":"1.0.0-rc.1",
+	  "xml2json.min.js":"1.2.x",
+    "localforage":"latest",
+    "angular-localforage":"latest",
+    "baobab-angular":"latest"
   }
 }

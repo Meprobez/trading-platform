@@ -12,19 +12,20 @@ var apiProxy = proxy('http://devsharewallet.airsoftltd.com/', {
     }
 });
 
-app.use("/trade*", apiProxy); //proxing all requests to http://devsharewallet.airsoftltd.com/
+app.use("/trade.php/trader/connection/in", apiProxy); //proxing all requests to http://devsharewallet.airsoftltd.com/
 app.use("/cdn*", apiProxy);
 
 /*Serving static files*/
-
+app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname,'main')));
 app.use(express.static(path.join(__dirname,'login-view'))); //Dont need to include Folder name
 app.use(express.static(path.join(__dirname,'static'))); //in our HTML, only File name (inside Folder do insert)
-app.use(express.static(path.join(__dirname,'main')));
+
 
 //Entry point - login.html
-app.get('/', function (req, res) {
+app.get('/*', function (req, res) {
   var options = {
-    root: __dirname + "/login-view",
+    root: __dirname,
     dotfiles: 'deny',
     headers: {
       'x-timestamp': Date.now(),
@@ -32,7 +33,7 @@ app.get('/', function (req, res) {
     }
   };
  
-  var fileName = "login.html";
+  var fileName = "index.html";
   res.sendFile(fileName, options, function (err) {
     if (err) {
       next(err);
@@ -42,6 +43,7 @@ app.get('/', function (req, res) {
   });
 });
 
+
 app.listen(8080, function () {
-  console.log('Example app listening on port 8080!')
+  console.log('trading-platform listening on port 8080!')
 });
