@@ -6,12 +6,21 @@ angular.module('login', [
   'ngRoute',
   'ui.router',
   'spell',
+  'flux'
 ])
 .config(config);
 
-config.$inject = ['$provide','$compileProvider','$filterProvider','$routeProvider','$locationProvider','moduleInvokerProvider','$httpProvider','$sceDelegateProvider','$stateProvider'];
+config.$inject = ['$provide','$compileProvider','$filterProvider','$routeProvider','$locationProvider','moduleInvokerProvider','$httpProvider','$sceDelegateProvider','$stateProvider','fluxProvider'];
 
-function config($provide,$compileProvider,$filterProvider,$routeProvider,$locationProvider,moduleInvokerProvider,$httpProvider,$sceDelegateProvider,$stateProvider)
+function config($provide,$compileProvider,$filterProvider,$routeProvider,$locationProvider,moduleInvokerProvider,$httpProvider,$sceDelegateProvider,$stateProvider,fluxProvider)
 {
+  var forgotPassword = {
+  name: 'forgotPassword',
+  parent: 'login',
+  url: '/forgotPassword',
+  component: 'forgotPassword'
+  };
+
+  $stateProvider.state(forgotPassword);
   console.log(angular.module('login'));
 }

@@ -1,21 +1,23 @@
 'use strict';
-
 // Define your Application Module module
 angular.module('login')
-.component('login',{
+.component('login',
+{
 	templateUrl:'login-component/login-component.html',
 	transclude:true,
 	replace:true,
 	controller:loginController
 })
 
-function loginController()
+loginController.$inject = ['loginActions'];
+
+function loginController(loginActions)
 {
 	var self = this;
-  self.dialogIsDilplayed = false;
-}
+  	self.toggleDialog = toggleDialog;
 
-function toggleDialog()
-{
-   self.dialogIsDilplayed = true;
+	function toggleDialog()
+	{
+		loginActions.toggleDialog();
+	}
 }

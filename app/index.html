@@ -23,14 +23,16 @@
     <script src="app.run.js"></script>
 
     <script src="login.config.js"></script>
+    <script src="login-flux/login.actions.js"></script>
+    <script src="login-flux/login.store.js"></script>
     <script src="login-component/login-component.js"></script>
     <link rel="stylesheet" type="text/css" href="login-component/login-component.css">
 
-    <script src="forgetPassword-component/forgetPassword-component.js"></script>
+    <script src="forgotPassword-component/forgotPassword-component.js"></script>
 		
 <head>
 <body ng-app="trading-platform">
-<ng-view class="ng-cloak"></ng-view>
+<ui-view></ui-view>
 <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
         <script>
             window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
