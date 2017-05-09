@@ -6,7 +6,7 @@ function loginStore()
   return {
     initialize: function () {
       this.state = this.immutable({
-       forgetPassword: false
+       forgotPassword: false
       });
     },
     handlers: {
@@ -15,8 +15,7 @@ function loginStore()
 
     toggleDialog: function (payload) 
     {
-      this.state.set('forgetPassword', payload.toggle);
-      alert('init');
+      this.state.set('forgotPassword', payload.toggle);
       $( "#modal_forget" ).dialog({
          autoOpen: true,
          modal: true,
@@ -37,8 +36,8 @@ function loginStore()
       });
     },
     exports: {
-      get forgetPassword() {
-        return this.state.get('forgetPassword');
+      get forgotPassword() {
+        return this.state.get('forgotPassword');
       }
     }
   }

@@ -9,16 +9,15 @@ angular.module('login')
 	controller:forgotPasswordController
 })
 //$( '#modal_forget' ).dialog( 'open' );
-forgotPasswordController.$inject = ['loginStore','loginActions'];
+forgotPasswordController.$inject = ['loginStore','loginActions','$scope'];
 
-function forgotPasswordController(loginStore,loginActions)
+function forgotPasswordController(loginStore,loginActions,$scope)
 {
 	var self = this;
- 
-  self.toggleDialog = loginActions.toggleDialog;
-  self.$listenTo(loginStore);
+	$scope.$listenTo(loginStore, toggleDialog);
 
-  function setStoreVars() {
-      $scope.forgotPassword = loginStore.forgotPassword;
-    }
+	function toggleDialog()
+	{
+		loginStore.toggleDialog;
+	}
 }

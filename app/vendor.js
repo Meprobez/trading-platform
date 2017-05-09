@@ -11,7 +11,8 @@ import '../bower_components/offline/offline.min.js';
 import '../bower_components/localforage/dist/localforage.min.js';
 import '../bower_components/angular-localforage/dist/angular-localForage.min.js';
 import '../bower_components/baobab-angular/release/baobab-angular.js';
-import '../bower_components/flux-angular/release/flux-angular.min';
+import '../bower_components/flux-angular/release/flux-angular.min.js';
+import '../bower_components/location-bar/location-bar.js';
 
 import './core/core.bundle.js';
 

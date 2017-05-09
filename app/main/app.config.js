@@ -28,7 +28,7 @@ function config($provide,$compileProvider,$filterProvider,$routeProvider,$locati
   ]);
   
   $routeProvider.when('/',{redirectTo: "/trade.php/trader/connection/login"}); //aheret localhost:port yiten wgiya, vekaha ze yaavor le localhost:port/#!/
- 								
+                
   var login = {
     name: 'login',
     url: '/trade.php/trader/connection/login',

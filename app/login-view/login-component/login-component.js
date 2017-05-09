@@ -9,15 +9,37 @@ angular.module('login')
 	controller:loginController
 })
 
-loginController.$inject = ['loginActions'];
+loginController.$inject = ['loginStore','loginActions','$scope','$http'];
 
-function loginController(loginActions)
+function loginController(loginStore,loginActions,$scope,$http)
 {
 	var self = this;
-  	self.toggleDialog = toggleDialog;
+	self.forgotPassword = loginStore.forgotPassword;
+	self.toggleDialog = toggleDialog;
+  	
+	self.$postLink = postLink;
+	self.errorPassword = false;
+
+	$scope.$listenTo(loginStore,setView);
 
 	function toggleDialog()
 	{
 		loginActions.toggleDialog();
 	}
+
+	function setView()
+	{
+		self.forgotPassword = loginStore.forgotPassword;
+	}
+
+	function postLink()
+	{
+		window.addEventListener('load',function(event)
+		{
+			alert(event);
+			console.log(event);
+			self.errorPassword = true;
+		})
+	}
+
 }

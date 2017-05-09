@@ -17,6 +17,7 @@ function config($provide,$compileProvider,$filterProvider,$routeProvider,$locati
   var forgotPassword = {
   name: 'forgotPassword',
   parent: 'login',
+ 
   url: '/forgotPassword',
   component: 'forgotPassword'
   };
