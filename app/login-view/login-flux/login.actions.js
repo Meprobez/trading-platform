@@ -6,7 +6,8 @@ loginActions.$inject = ['$http','flux'];
 function loginActions($http, flux) 
 {
   var service = {
-    toggleDialog: toggleDialog
+    toggleDialog: toggleDialog,
+    loginError:loginError
   };
   return service;
 
@@ -14,6 +15,11 @@ function loginActions($http, flux)
   {
     flux.dispatch('TOGGLE_DIALOG',{toggle:true});
   }
+  function loginError(error) 
+  {
+    flux.dispatch('TOGGLE_LOGIN_ERROR',{error:error});
+  }
+
 }
   // An exaple of a basic dispatch with the first argument being the action key and a payload.
   // One or more stores is expected to have a handler for COMMENT_SET_TITLE

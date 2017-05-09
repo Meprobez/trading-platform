@@ -8,12 +8,12 @@
             <form id="login" name="login" target="_top" method="post" action="/trade.php/trader/connection/in">
                 <input class="input" type="hidden" name="auth_url_return" value="/trader.php">
                 <input class="input" type="email" required id="email" name="login" value="" placeholder="E-mail">
-                <input class="input" type="password" required id="password" name="password" value="" placeholder="Password">
+                <input class="input" type="password" required ng-minlength="3" id="password" name="password" value="" placeholder="Password">
                 <input class="input" type="submit" id="go" value="Login">
                 <span ng-show="login.login.$error.email">This email format is invalid!</span><br>
             </form>
             <a data-toggle="modal" data-target="#modal_forget" id="forget" ui-sref="forgotPassword" ng-click="$ctrl.toggleDialog()">I forgot my password</a>
-            <span style="color:red;margin-left:100px" ng-show=$ctrl.errorPassword>Error login</span>
+            <span style="color:red;margin-left:100px" ng-show=$ctrl.loginError>Error login</span>
         </div>
         <forgot-password ng-show = "false"></forgot-password>
     </div>

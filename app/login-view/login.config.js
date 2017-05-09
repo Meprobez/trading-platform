@@ -10,18 +10,18 @@ angular.module('login', [
 ])
 .config(config);
 
-config.$inject = ['$provide','$compileProvider','$filterProvider','$routeProvider','$locationProvider','moduleInvokerProvider','$httpProvider','$sceDelegateProvider','$stateProvider','fluxProvider'];
+config.$inject = ['$provide','$compileProvider','$filterProvider','$routeProvider','$locationProvider','moduleInvokerProvider','$httpProvider','$sceDelegateProvider','$stateProvider','fluxProvider','loginActionsProvider'];
 
-function config($provide,$compileProvider,$filterProvider,$routeProvider,$locationProvider,moduleInvokerProvider,$httpProvider,$sceDelegateProvider,$stateProvider,fluxProvider)
+function config($provide,$compileProvider,$filterProvider,$routeProvider,$locationProvider,moduleInvokerProvider,$httpProvider,$sceDelegateProvider,$stateProvider,fluxProvider,loginActionsProvider)
 {
   var forgotPassword = {
   name: 'forgotPassword',
   parent: 'login',
- 
   url: '/forgotPassword',
   component: 'forgotPassword'
   };
 
   $stateProvider.state(forgotPassword);
+  
   console.log(angular.module('login'));
 }

@@ -1,16 +1,19 @@
 angular.module('login')
 .store('loginStore', loginStore);
 
-function loginStore() 
+loginStore.$inject = ['$location'];
+function loginStore($location) 
 {
   return {
     initialize: function () {
       this.state = this.immutable({
-       forgotPassword: false
+       forgotPassword: false,
+       loginError: false
       });
     },
     handlers: {
-      TOGGLE_DIALOG: 'toggleDialog'
+      TOGGLE_DIALOG: 'toggleDialog',
+      TOGGLE_LOGIN_ERROR: 'toggleLoginError'
     },
 
     toggleDialog: function (payload) 
@@ -18,6 +21,7 @@ function loginStore()
       this.state.set('forgotPassword', payload.toggle);
       $( "#modal_forget" ).dialog({
          autoOpen: true,
+         title:'I forgot my password',
          modal: true,
 		     buttons: {
                     "Send": function() 
@@ -30,14 +34,23 @@ function loginStore()
                     },
                     Cancel: function() 
                     {
+                      window.location = '/trade.php/trader/connection/login';
                       $( this ).dialog( "close" );
+                      
                     }
                   }
       });
     },
+    toggleLoginError:function(payload)
+    {
+      this.state.set('loginError', payload.error);
+    },
     exports: {
       get forgotPassword() {
         return this.state.get('forgotPassword');
+      },
+      get loginError() {
+        return this.state.get('loginError');
       }
     }
   }

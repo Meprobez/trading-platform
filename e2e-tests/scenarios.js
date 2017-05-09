@@ -21,13 +21,13 @@ describe('trading-platform', function()
       expect(modal_forget.isDisplayed()).toBe(true);
      });
     
-    it('should toggle dialog window and redirect `http://localhost:8080/` to `http://localhost:8080//#!/trade.php/trader/connection/formGetPassword`', function() 
+    it('should toggle dialog window and redirect http://localhost:8080/ to http://localhost:8080//trade.php/trader/connection/forgotPassword', function() 
     {  
       var forget = browser.findElement(by.id('forget'));
       forget.click();
       var modal_forget = element(by.id('modal_forget'));
       expect(modal_forget.isDisplayed()).toBe(true);
-      expect(browser.getCurrentUrl()).toBe('http://localhost:8080/#/trade.php/trader/connection/formGetPassword');
+      expect(browser.getCurrentUrl()).toBe('http://localhost:8080/trade.php/trader/connection/login/forgotPassword');
      });
     
     it('should toggle dialog window, drag and drop it and verify the display of `This email does not exist in our database` message', function() 

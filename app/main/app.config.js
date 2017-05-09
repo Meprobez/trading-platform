@@ -27,8 +27,9 @@ function config($provide,$compileProvider,$filterProvider,$routeProvider,$locati
     'http://devsharewallet.airsoftltd.com/**.jsonp?**'
   ]);
   
-  $routeProvider.when('/',{redirectTo: "/trade.php/trader/connection/login"}); //aheret localhost:port yiten wgiya, vekaha ze yaavor le localhost:port/#!/
-                
+  $routeProvider.when('/',{redirectTo: "/trade.php/trader/connection/login"}) //aheret localhost:port yiten wgiya, vekaha ze yaavor le localhost:port/#!/
+                .when('/trade.php/trader/connection/out',{resolve:{ togglePasswordError:togglePasswordError}});
+                 
   var login = {
     name: 'login',
     url: '/trade.php/trader/connection/login',
@@ -38,5 +39,11 @@ function config($provide,$compileProvider,$filterProvider,$routeProvider,$locati
 
   $stateProvider.state(login);
  
+  togglePasswordError.$inject = ['loginStore', 'loginActions','$location'];
+  function togglePasswordError(loginStore,loginActions,$location)
+  {
+    loginActions.loginError(true);
+    $location.path('/trade.php/trader/connection/login');
+  }
   console.log(angular.module('trading-platform'));
 }

@@ -9,22 +9,23 @@ angular.module('login')
 	controller:loginController
 })
 
-loginController.$inject = ['loginStore','loginActions','$scope','$http'];
+loginController.$inject = ['loginStore','loginActions','$scope'];
 
-function loginController(loginStore,loginActions,$scope,$http)
+function loginController(loginStore,loginActions,$scope)
 {
 	var self = this;
 	self.forgotPassword = loginStore.forgotPassword;
 	self.toggleDialog = toggleDialog;
-  	
-	self.$postLink = postLink;
-	self.errorPassword = false;
+	
+	self.loginError = loginStore.loginError;
 
-	$scope.$listenTo(loginStore,setView);
-
+	$scope.$listenTo(loginStore,'forgotPassword',setView);
+	$scope.$listenTo(loginStore,'loginError',toggleError);
+    	
 	function toggleDialog()
 	{
 		loginActions.toggleDialog();
+		loginActions.loginError(false);
 	}
 
 	function setView()
@@ -32,14 +33,9 @@ function loginController(loginStore,loginActions,$scope,$http)
 		self.forgotPassword = loginStore.forgotPassword;
 	}
 
-	function postLink()
+	function toggleError()
 	{
-		window.addEventListener('load',function(event)
-		{
-			alert(event);
-			console.log(event);
-			self.errorPassword = true;
-		})
+		self.loginError = loginStore.loginError;
+		console.log(self.loginError);
 	}
-
 }

@@ -94,8 +94,7 @@ angular.module('spell')
 					if($history.getHistory().length<3)
 						$location.path('/');
 					else
-						window.location = "#!"+$history.getPreviousPage();
-					  		 	 	
+						window.location = "#!"+$history.getPreviousPage();	 	 	
 					$location.replace();
 	      		});
 			}  
