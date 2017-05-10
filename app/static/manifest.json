@@ -3,6 +3,10 @@
   "bundle.css.map": "bundle.min.css.map",
   "bundle.js": "bundle.min.js",
   "bundle.js.map": "bundle.min.js.map",
+  "loginView.css": "loginView.min.css",
+  "loginView.css.map": "loginView.min.css.map",
+  "loginView.js": "loginView.min.js",
+  "loginView.js.map": "loginView.min.js.map",
   "vendor.js": "vendor.min.js",
   "vendor.js.map": "vendor.min.js.map"
 }

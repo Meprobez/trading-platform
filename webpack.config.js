@@ -14,6 +14,7 @@ module.exports = {
     	entry: {
     	bundle: "./app/bundle.js",
     	vendor:"./app/vendor.js",
+		loginView:"./app/login-view/loginView.bundle.js"
   	},
     output: {
         path: path.resolve(__dirname, './app/static/'),
