@@ -20,6 +20,7 @@ app.use("/cdn*", apiProxy);
 /*Serving static files*/
 app.use(express.static(__dirname));
 app.use(express.static(path.join(__dirname,'main')));
+app.use(express.static(path.join(__dirname,'app-files')));
 app.use(express.static(path.join(__dirname,'login-view'))); //Dont need to include Folder name
 app.use(express.static(path.join(__dirname,'static'))); //in our HTML, only File name (inside Folder do insert)
 
